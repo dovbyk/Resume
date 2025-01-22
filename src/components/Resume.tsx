@@ -30,8 +30,10 @@ const Resume = () => {
                   <li className="flex items-center before:content-['•'] before:mr-2 before:text-purple-500">
                     Secured overall 9th rank
                   </li>
+                   <li className="flex items-center before:content-['•'] before:mr-2 before:text-purple-500">
+                       <a href="https://example.com/your-image.jpg" target="_blank" id="viewImageLink" style="font-size: 12px;">View Certificate</a>
+                  </li>
                 </ul>
-                 <a href="https://example.com/your-image.jpg" target="_blank" id="viewImageLink">View Certificate</a>
               </div>
 
          
