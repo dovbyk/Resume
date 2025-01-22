@@ -1,0 +1,54 @@
+import React from 'react';
+
+const About = () => {
+  const skills = [
+    'C/C++/Java',
+    'Data Analysis with Python',
+    'Linux',
+    'React JS(beginner)',
+    'Node JS(beginner)',
+    'SQL',
+    'Git',
+  ];
+
+  return (
+    <section id="about" className="py-20 bg-gray-900">
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center mb-12 gradient-text">About Me</h2>
+        <div className="max-w-3xl mx-auto">
+          <div className="glass-card p-8 mb-12">
+            <p className="text-lg text-gray-300 leading-relaxed">
+              I'm a passionate Tech Enthusiast with an aim of doing something for the open-source community.
+            </p>
+          </div>
+          
+          <div className="mb-12">
+            <h3 className="text-xl font-semibold mb-6 text-white">Skills & Technologies</h3>
+            <div className="flex flex-wrap gap-3">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-4 py-2 glass-card text-gray-300 hover:text-white hover:scale-105 transition-all duration-200"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold mb-6 text-white">Education</h3>
+            <div className="glass-card p-6 hover:bg-gray-800/50 transition-colors duration-300">
+              <h4 className="font-semibold text-white">BTech in Computer Science and Engineering</h4>
+              <p className="text-gray-400">Kalinga Institute of Industrial Technology • 2022-2026</p>
+              <p className="text-gray-400">CGPA • 9.21 </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
