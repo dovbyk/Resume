@@ -42,7 +42,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-3xl opacity-20 glow-effect"></div>
               <img
-                src="src/photo.jpeg"
+                src="/src/photo.jpeg"
                 alt="Profile"
                 className="relative w-64 h-64 object-cover mx-auto rounded-full border-4 border-gray-800 shadow-2xl"
               />
