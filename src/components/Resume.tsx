@@ -31,6 +31,7 @@ const Resume = () => {
                     Secured overall 9th rank
                   </li>
                 </ul>
+                 <a href="https://example.com/your-image.jpg" target="_blank" id="viewImageLink">View Certificate</a>
               </div>
 
          
