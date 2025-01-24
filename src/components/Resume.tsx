@@ -49,7 +49,7 @@ const Resume = () => {
               <X size={24} />
             </button>
             <iframe
-              src="./src/Resume.pdf"
+              src="../Resume.pdf"
               className="w-full h-full rounded-lg"
               title="Resume PDF"
             />
