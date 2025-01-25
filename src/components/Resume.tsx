@@ -1,8 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Eye, X } from 'lucide-react';
 
 const Resume = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+  const [isCertificateModalOpen, setIsCertificateModalOpen] = useState(false);
+  const [imageWidth, setImageWidth] = useState<string | number>("auto");
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/Resume.jpg";
+    img.onload = () => {
+      setImageWidth(img.width);
+    };
+  }, []);
+
+  const openModal = (type: string) => {
+    if (type === "resume") setIsResumeModalOpen(true);
+    if (type === "certificate") setIsCertificateModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsResumeModalOpen(false);
+    setIsCertificateModalOpen(false);
+  };
 
   return (
     <section id="resume" className="py-20 bg-gray-900">
@@ -13,7 +33,7 @@ const Resume = () => {
             <div className="flex justify-between items-center mb-8">
               <h3 className="text-2xl font-semibold text-white">Achievements</h3>
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => openModal("resume")}
                 className="flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-opacity"
               >
                 <Eye size={20} className="mr-2" />
@@ -32,26 +52,68 @@ const Resume = () => {
                     Secured overall 9th rank
                   </li>
                 </ul>
+                {/* Certificate Button */}
+                <button
+                  onClick={() => openModal("certificate")}
+                  className="mt-4 flex items-center px-3 py-1 text-sm bg-transparent border border-white text-white rounded-md hover:bg-gray-800 transition-colors"
+                  >
+                  Certificate
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* PDF Viewer Modal */}
-      {isModalOpen && (
+      {/* Resume Modal */}
+{isResumeModalOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
+    <div
+      className="relative bg-gray-900 rounded-lg"
+      style={{
+        width: typeof imageWidth === "number" ? `${imageWidth}px` : imageWidth,
+        maxHeight: "100vh", // Adjust max height as needed
+        overflowY: "auto", // Enable vertical scrolling
+      }}
+    >
+      <button
+        onClick={closeModal}
+        className="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
+      >
+        <X size={24} />
+      </button>
+      <img
+        src="/Resume.jpg"
+        className="w-full h-auto rounded-lg"
+        alt="Resume Image"
+        style={{ display: "block", maxHeight: "none" }}
+      />
+    </div>
+  </div>
+)}
+
+
+      {/* Certificate Modal */}
+      {isCertificateModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
-          <div className="relative w-full max-w-5xl h-[90vh] bg-gray-900 rounded-lg">
+          <div
+            className="relative bg-gray-900 rounded-lg"
+            style={{
+              maxWidth: "70vw", // Limit width to fit within the viewport
+              maxHeight: "100vh", // Limit height to fit within the viewport
+            }}
+          >
             <button
-              onClick={() => setIsModalOpen(false)}
+              onClick={closeModal}
               className="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
             >
               <X size={24} />
             </button>
-            <iframe
-              src="../Resume.pdf"
-              className="w-full h-full rounded-lg"
-              title="Resume PDF"
+            <img
+              src="/Certificate.png"
+              className="w-full h-auto rounded-lg"
+              alt="Certificate Image"
+              style={{ display: "block" }}
             />
           </div>
         </div>
