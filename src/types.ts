@@ -5,6 +5,7 @@ export interface Project {
   technologies: string[];
   githubUrl: string;
   liveUrl?: string;
+  demoVideo?: string;
 }
 
 export interface SocialLink {
