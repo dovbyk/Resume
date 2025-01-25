@@ -1,8 +1,11 @@
-import React from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { Github, ExternalLink, Play, X } from 'lucide-react';
 import type { Project } from '../types';
 
 const Projects = () => {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState<string>('');
+
   const projects: Project[] = [
     {
       title: 'BroBot',
@@ -10,7 +13,6 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1684369175833-4b445ad6bfb5?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       technologies: ['CNN', 'OpenCV', 'PIL'],
       githubUrl: 'https://github.com/dovbyk/BroBot',
-      liveUrl: 'https://project1.com'
     },
     {
       title: 'SaveThePac',
@@ -18,8 +20,14 @@ const Projects = () => {
       image: 'https://png.pngtree.com/background/20230716/original/pngtree-realistic-discord-icon-logo-in-3d-rendering-picture-image_4237831.jpg',
       technologies: ['Java'],
       githubUrl: 'https://github.com/dovbyk/PacMan',
+      demoVideo: '/demo.mp4'
     }
   ];
+
+  const openVideoModal = (videoUrl: string) => {
+    setCurrentVideo(videoUrl);
+    setIsVideoModalOpen(true);
+  };
 
   return (
     <section id="projects" className="py-20 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
@@ -73,14 +81,48 @@ const Projects = () => {
                       Live Demo
                     </a>
                   )}
+                  {project.demoVideo && (
+                    <button
+                      onClick={() => openVideoModal(project.demoVideo!)}
+                      className="flex items-center text-gray-400 hover:text-white transition-colors"
+                    >
+                      <Play size={20} className="mr-1" />
+                      Watch Demo
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
+          <div className="relative w-full max-w-4xl bg-gray-900 rounded-lg">
+            <button
+              onClick={() => setIsVideoModalOpen(false)}
+              className="absolute -top-10 right-0 text-gray-400 hover:text-white p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <video
+              src={currentVideo}
+              controls
+              className="w-full rounded-lg"
+              autoPlay
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
 
 export default Projects;
+
+
+
