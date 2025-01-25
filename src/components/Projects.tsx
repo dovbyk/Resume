@@ -7,7 +7,7 @@ const Projects = () => {
     {
       title: 'BroBot',
       description: 'A Deep Learning Model which takes user handwriting as sample and converts any input digital text into a realistic handwriting ',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1684369175833-4b445ad6bfb5?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       technologies: ['CNN', 'OpenCV', 'PIL'],
       githubUrl: 'https://github.com/dovbyk/BroBot',
       liveUrl: 'https://project1.com'
@@ -15,7 +15,7 @@ const Projects = () => {
     {
       title: 'SaveThePac',
       description: 'A GUI based game which contains Pacman as the character whose aim is to collect fruits and dodge any incoming obstacles',
-      image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80',
+      image: 'https://png.pngtree.com/background/20230716/original/pngtree-realistic-discord-icon-logo-in-3d-rendering-picture-image_4237831.jpg',
       technologies: ['Java'],
       githubUrl: 'https://github.com/dovbyk/PacMan',
     }
