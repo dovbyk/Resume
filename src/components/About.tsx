@@ -18,7 +18,7 @@ const About = () => {
         <div className="max-w-3xl mx-auto">
           <div className="glass-card p-8 mb-12">
             <p className="text-lg text-gray-300 leading-relaxed">
-              I'm a passionate Tech Enthusiast with an aim of doing something for the open-source community.
+              Just a random guy with an aspiration of contributing to the open-source community .
             </p>
           </div>
           
