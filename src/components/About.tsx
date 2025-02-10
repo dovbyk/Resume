@@ -2,9 +2,10 @@ import React from 'react';
 
 const About = () => {
   const skills = [
-    'C/C++/Java',
+    'C,C++,Java',
     'Data Analysis with Python',
-    'Linux',
+    'LINUX',
+    'Shell Programming'
     'React JS(beginner)',
     'Node JS(beginner)',
     'SQL',
@@ -47,7 +48,7 @@ const About = () => {
             <div className="glass-card p-6 hover:bg-gray-800/50 transition-colors duration-300">
               <h4 className="font-semibold text-white">10th and 12th</h4>
               <p className="text-gray-400">New Horizon E.B Higher Secondary School • 2020-2022</p>
-              <p className="text-gray-400">CGPA • 3.9 & 3.21 </p>
+              <p className="text-gray-400">CGPA • 3.9 & 3.01 </p>
 
             </div>
           </div>
