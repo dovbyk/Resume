@@ -5,7 +5,7 @@ const About = () => {
     'C,C++,Java',
     'Data Analysis with Python',
     'LINUX',
-    'Shell Programming'
+    'Shell Programming',
     'React JS(beginner)',
     'Node JS(beginner)',
     'SQL',
