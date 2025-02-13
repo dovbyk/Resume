@@ -8,7 +8,7 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-yellow-50">
+    <div className="min-h-screen bg-blue-50">
       <Header />
       <main>
         <Hero />
