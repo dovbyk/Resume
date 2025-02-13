@@ -14,7 +14,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-red-900/80 backdrop-blur-lg border-b border-red-800/50 z-50">
+    <header className="fixed top-0 left-0 right-0 bg-grey-900/80 backdrop-blur-lg border-b border-grey-800/50 z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a href="#" className="text-2xl font-bold gradient-text">
