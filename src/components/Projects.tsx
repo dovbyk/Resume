@@ -8,12 +8,21 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
-      title: 'BroBot',
-      description: 'A Deep Learning Model which takes user handwriting as sample and converts any input digital text into a realistic handwriting ',
+      title: 'DeepScript',
+      description: 'A Deep Learning Model which takes user handwriting as sample and converts any digital text into a realistic handwriting ',
       image: 'https://images.unsplash.com/photo-1684369175833-4b445ad6bfb5?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      technologies: ['CNN', 'OpenCV', 'PIL'],
-      githubUrl: 'https://github.com/dovbyk/BroBot',
+      technologies: ['Transformer', 'OpenCV', 'PIL'],
+      githubUrl: 'https://github.com/dovbyk/DeepScript',
     },
+
+       {
+      title: 'KIIT-Compatibility',
+      description: 'A web application which allows KIITians to check compatibility with their mates and if the score meets the threshold, they can request for phone number of that person.',
+      image: 'https://e7.pngegg.com/pngimages/9/267/png-clipart-senior-management-business-project-management-project-manager-team-members-text-service.png',
+      technologies: ['ReactJS', 'ExpressJS', 'MongoDB', 'Firebase Authentication'],
+      githubUrl: 'https://github.com/dovbyk/KIIT-Compatibility',
+    },
+    
     {
       title: 'SaveThePac',
       description: 'A GUI based game which contains Pacman as the character whose aim is to collect fruits and dodge any incoming obstacles',
