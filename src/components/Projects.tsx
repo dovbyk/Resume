@@ -14,15 +14,13 @@ const Projects = () => {
       technologies: ['Transformer', 'OpenCV', 'PIL'],
       githubUrl: 'https://github.com/dovbyk/DeepScript',
     },
-
-       {
+    {
       title: 'KIIT-Compatibility',
       description: 'A web application which allows KIITians to check compatibility with their mates and if the score meets the threshold, they can request for phone number of that person.',
       image: 'https://e7.pngegg.com/pngimages/9/267/png-clipart-senior-management-business-project-management-project-manager-team-members-text-service.png',
       technologies: ['ReactJS', 'ExpressJS', 'MongoDB', 'Firebase Authentication'],
       githubUrl: 'https://github.com/dovbyk/KIIT-Compatibility',
     },
-    
     {
       title: 'SaveThePac',
       description: 'A GUI based game which contains Pacman as the character whose aim is to collect fruits and dodge any incoming obstacles',
@@ -43,7 +41,7 @@ const Projects = () => {
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-12 gradient-text">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project) => (
+          {projects.slice(0, 2).map((project) => (
             <div
               key={project.title}
               className="glass-card overflow-hidden group hover:scale-[1.02] transition-all duration-300"
@@ -79,59 +77,57 @@ const Projects = () => {
                     <Github size={20} className="mr-1" />
                     Code
                   </a>
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-gray-400 hover:text-white transition-colors"
-                    >
-                      <ExternalLink size={20} className="mr-1" />
-                      Live Demo
-                    </a>
-                  )}
-                  {project.demoVideo && (
-                    <button
-                      onClick={() => openVideoModal(project.demoVideo!)}
-                      className="flex items-center text-gray-400 hover:text-white transition-colors"
-                    >
-                      <Play size={20} className="mr-1" />
-                      Watch Demo
-                    </button>
-                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Video Modal */}
-      {isVideoModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
-          <div className="relative w-full max-w-4xl bg-gray-900 rounded-lg">
-            <button
-              onClick={() => setIsVideoModalOpen(false)}
-              className="absolute -top-10 right-0 text-gray-400 hover:text-white p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
-            >
-              <X size={24} />
-            </button>
-            <video
-              src={currentVideo}
-              controls
-              className="w-full rounded-lg"
-              autoPlay
-            >
-              Your browser does not support the video tag.
-            </video>
+        
+        {/* Centering the third project */}
+        <div className="flex justify-center mt-8">
+          <div
+            key={projects[2].title}
+            className="glass-card overflow-hidden group hover:scale-[1.02] transition-all duration-300 w-full max-w-lg"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
+              <img
+                src={projects[2].image}
+                alt={projects[2].title}
+                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2 text-white">{projects[2].title}</h3>
+              <p className="text-gray-400 mb-4">{projects[2].description}</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {projects[2].technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 text-sm text-gray-300 bg-gray-800/50 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex space-x-4">
+                <a
+                  href={projects[2].githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-gray-400 hover:text-white transition-colors"
+                >
+                  <Github size={20} className="mr-1" />
+                  Code
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      )}
+        {/* End of centering the third project */}
+      </div>
     </section>
   );
 };
 
 export default Projects;
-
-
-
