@@ -120,11 +120,41 @@ const Projects = () => {
                   <Github size={20} className="mr-1" />
                   Code
                 </a>
+                {projects[2].demoVideo && (
+                  <button
+                    onClick={() => openVideoModal(projects[2].demoVideo!)}
+                    className="flex items-center text-gray-400 hover:text-white transition-colors"
+                  >
+                    <Play size={20} className="mr-1" />
+                    Watch Demo
+                  </button>
+                )}
               </div>
             </div>
           </div>
         </div>
-        {/* End of centering the third project */}
+
+        {/* Video Modal */}
+        {isVideoModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
+            <div className="relative w-full max-w-4xl bg-gray-900 rounded-lg">
+              <button
+                onClick={() => setIsVideoModalOpen(false)}
+                className="absolute -top-10 right-0 text-gray-400 hover:text-white p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
+              >
+                <X size={24} />
+              </button>
+              <video
+                src={currentVideo}
+                controls
+                className="w-full rounded-lg"
+                autoPlay
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
