@@ -8,10 +8,10 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Hi, I'm <span className="gradient-text">Aryan Sharma Gaire</span>
+              Hi, I'm Aryan Sharma Gaire
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 mb-8">
-              Aspiring Software Engineer
+              A CS student and front-end developer specializing in building web applications.
             </p>
             <div className="flex items-center justify-center md:justify-start space-x-4">
               <a
